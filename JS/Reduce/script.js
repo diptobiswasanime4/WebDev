@@ -1,43 +1,44 @@
-let x = 3;
-let y = 5;
+const pkmnTrainers = [
+  {
+    name: "Wally",
+    pkmn: "Ralts",
+    age: 12,
+    town: "Petalburg City",
+    pkmnCount: 6,
+  },
+  {
+    name: "Gary",
+    pkmn: "Eevee",
+    age: 10,
+    town: "Pallet Town",
+    pkmnCount: 4,
+  },
+  {
+    name: "Lyra",
+    pkmn: "Marill",
+    age: 14,
+    town: "New Bark Town",
+    pkmnCount: 3,
+  },
+];
 
-function sum(a, b) {
-  console.log(a + b);
-}
-function mul(a, b) {
-  console.log(a * b);
-}
 
-function div(a, b) {
-  console.log(a / b);
-}
+let totalPkmn = pkmnTrainers.reduce((acc, cur) => {
+  console.log(acc);
+  acc += cur.pkmnCount
+  return acc
+}, 2)
 
-// sum(x, y);
-// mul(x, y);
-// div(x, y);
+console.log("Total Pkmn:", totalPkmn);
 
-function calc(a, b, callback) {
-  callback(a, b);
-}
+let totalPkmnInfo = pkmnTrainers.reduce((acc, cur) => {
+  console.log(acc);
+  acc.totalPkmn += cur.pkmnCount
+  acc.trainers.push(cur.name)
+return acc
+}, {
+  totalPkmn: 2,
+  trainers: ['Ash']
+})
 
-calc(x, y, sum);
-calc(x, y, mul);
-calc(x, y, div);
-
-addEventListener("mousemove", (e) => {
-  console.log(e.clientX, e.clientY);
-});
-
-// Callback Hell, Pyramid of Doom
-setTimeout(() => {
-  console.log("Alert 1");
-  setTimeout(() => {
-    console.log("Alert 2");
-    setTimeout(() => {
-      console.log("Alert 3");
-      setTimeout(() => {
-        console.log("Alert 4");
-      }, 4000);
-    }, 3000);
-  }, 2000);
-}, 1000);
+console.log("Total Pkmn info:", totalPkmnInfo);
