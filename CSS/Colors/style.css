@@ -1,0 +1,6 @@
+body {
+    /* background-color: brown; */
+    /* background: linear-gradient(to top left, red, blue, green, red); */
+    background: radial-gradient(circle at left center, red, blue, green, violet);
+    height: 100vh;
+}
